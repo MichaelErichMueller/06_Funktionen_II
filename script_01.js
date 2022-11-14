@@ -8,3 +8,10 @@
 4. Ausgabe in Konsole :
 */
 
+
+
+// module: console output /Test
+function output(outputData){
+console.log(outputData);
+}
+

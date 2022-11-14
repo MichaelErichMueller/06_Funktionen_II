@@ -8,33 +8,59 @@
 4. Ausgabe in Konsole :
 */
 
+startApp()
+function startApp(){
+    output(calculator(getNumber1(),getNumber2(),getOp()));
+
+
+}
+function getNumber1(){
+return 2;
+
+}
+
+function getNumber2(){
+return 2;
+
+}
+
+function getOp(){
+return "+";
+
+}
+
+
 // output(add(2,3));
 // output(subtract(2,3))
 // output(multiply(2,4));
 // output(divide(2,2));
 // output(divide(2,0));
+// output(divide(2,0));
+// output(divide(2,0));
 
 
 // module: Calculator / Tests:
 // agreement: "+","-","*","/"
-output(calculator("+"));
-output(calculator("-"));
-output(calculator("*"));
-output(calculator("/"));
-output(calculator("#?!"));
+// *
 
-function calculator(op){
+// output(calculator(2,2,"+"));
+// output(calculator(2,2,"-"));
+// output(calculator(2,2,"*"));
+// output(calculator(2,0,"/"));
+// output(calculator(2,2,"#?!"));
+function calculator(a,b,op){
 switch (op) {
     case "+": // add
-        return "add";
+        return add(a,b);
     case "-": // subtract
-        return "sub";
+        return subtract(a,b);
     case "*": // multiply
-        return "mul";
+        return multiply(a,b);
     case "/": // divide 
-        return "divide";
+    case ":": // divide 
+        return divide(a,b);
     default:    // Error
-        return "Error";
+        return "Something went Wrong!";
     }
 }
 
@@ -42,7 +68,8 @@ switch (op) {
 // var 3.
 function divide(a,b) {
     if (b==0){
-    }
+        return "Division by 0 is no tPossible"
+    } 
 
     return a / b;
     }
@@ -59,7 +86,19 @@ function subtract(a,b) {
     return a - b;
     }
 // module: console output /Test
+
+// output("Hello");
+// output(2);
+
 function output(outputData){
-console.log(outputData);
+    // console.groupCollapsed(typeof outputData);
+    if (typeof outputData == "number") {
+        console.log("The result is:" + outputData);
+        
+    } else { 
+        console.log("Error:" + outputData);
+        
+    }
+
 }
 

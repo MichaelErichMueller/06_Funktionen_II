@@ -10,23 +10,17 @@
 
 startApp()
 function startApp(){
-    output(calculator(getNumber1(),getNumber2(),getOp()));
-
-
+    output(calculator(getNumber("first"),getNumber("second"),getOp()));
 }
-function getNumber1(){
-return 2;
-
-}
-
-function getNumber2(){
-return 2;
-
+function getNumber(figure){
+    let inputstr = prompt("Please insert" + figure + "Number:"  )
+    let num = parseInt(inputstr)
+return num;
 }
 
 function getOp(){
-return "+";
-
+let op =prompt("Please insert +, -, *,/")
+return op;
 }
 
 

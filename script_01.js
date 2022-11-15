@@ -8,21 +8,30 @@
 4. Ausgabe in Konsole :
 */
 
-startApp()
+// startApp()
 function startApp(){
     output(calculator(getNumber("first"),getNumber("second"),getOp()));
 }
+
 function getNumber(figure){
     let inputstr = prompt("Please insert" + figure + "Number:"  )
     let num = parseInt(inputstr)
 return num;
 }
 
+output(getOp());
 function getOp(){
-let op =prompt("Please insert +, -, *,/")
-return op;
+let op =prompt("Please insert +, -, *,/");
+if (isoValid(op)) {
+    return "operator ok";
+} else {
+   return "operator nicht ok";
 }
 
+}
+function isoValid(op){
+    return op == "+" || op == "-" ||op == "*" || op == "/"|| op == ":";
+}
 
 // output(add(2,3));
 // output(subtract(2,3))
